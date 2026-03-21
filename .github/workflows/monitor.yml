@@ -8,8 +8,6 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -30,9 +28,8 @@ jobs:
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
         run: python monitor.py
 
-      - name: Commit and push state
+      - name: Show output
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add state.json
-          git diff --cached --quiet || (git commit -m "Update state at $(date)" && git push)
+          echo "=== state.json ===" 
+          cat state.json 2>/dev/null || echo "state.json not found"
+          echo "=== workflow complete ==="
