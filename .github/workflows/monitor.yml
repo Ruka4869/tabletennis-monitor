@@ -12,7 +12,8 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -35,12 +36,17 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+          # 最新を取得（コンフリクト無視）
+          git pull origin main --no-rebase || true
+
+          # state保存
           git add state.json || true
 
+          # 変更があるときだけcommit
           if git diff --cached --quiet; then
             echo "No changes"
           else
             git commit -m "Update state"
-            git pull --rebase origin main
             git push origin main
           fi
+      
