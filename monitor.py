@@ -3,10 +3,10 @@ from bs4 import BeautifulSoup
 import hashlib
 import json
 import os
-import re
 from datetime import datetime
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
+from urllib.parse import urljoin
 
 # ===== 設定 =====
 SITES = [
@@ -19,7 +19,7 @@ SITES = [
     "https://share.google/zkAIpAHVkfpUf46m7"
 ]
 
-KEYWORDS = ["卓球大会", "要項", "申込", "案内"]
+FILE_EXTENSIONS = [".pdf", ".xls", ".xlsx"]
 
 STATE_FILE = "state.json"
 
@@ -43,51 +43,61 @@ for url in SITES:
 
         soup = BeautifulSoup(response.text, "html.parser")
 
+        file_links = []
+
+        # ▼ aタグからファイルリンク抽出
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+
+            if any(href.lower().endswith(ext) for ext in FILE_EXTENSIONS):
+                full_url = urljoin(url, href)
+                file_links.append(full_url)
+
+        # ▼ share.google対策：本文中のURLも拾う
         text = soup.get_text()
-        lines = text.splitlines()
+        for word in text.split():
+            if any(ext in word.lower() for ext in FILE_EXTENSIONS):
+                file_links.append(word)
 
-        matched_lines = []
+        # 重複除去
+        file_links = sorted(set(file_links))
 
-        for line in lines:
-            line = line.strip()
-
-            if not line:
-                continue
-
-            if any(keyword in line for keyword in KEYWORDS):
-                # ▼ 日時・時刻などノイズ削除
-                cleaned = re.sub(r"\d{4}[-/年]\d{1,2}[-/月]\d{1,2}日?.*", "", line)
-                cleaned = re.sub(r"\d{1,2}:\d{2}(:\d{2})?", "", cleaned)
-
-                cleaned = cleaned.strip()
-
-                if cleaned:
-                    matched_lines.append(cleaned)
-
-        # ▼ キーワード行がない場合はスキップ
-        if not matched_lines:
+        # ▼ ファイルが1つも取れない場合はスキップ（誤検知防止）
+        if not file_links:
             continue
 
-        content = "\n".join(sorted(set(matched_lines)))
-        current_hash = hashlib.md5(content.encode()).hexdigest()
+        current_hash = hashlib.md5("\n".join(file_links).encode()).hexdigest()
 
+        # 初回登録
         if url not in state:
-            state[url] = current_hash
+            state[url] = {
+                "hash": current_hash,
+                "files": file_links
+            }
 
-        elif state[url] != current_hash:
-            message = (
-                f"🔔 更新検知！\n{url}\n\n"
-                f"該当内容:\n" +
-                "\n".join(matched_lines[:5]) +
-                f"\n\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-            )
+        else:
+            old_files = state[url].get("files", [])
 
-            line_bot_api.push_message(
-                LINE_USER_ID,
-                TextSendMessage(text=message)
-            )
+            # ▼ 新規追加のみ検知
+            new_files = list(set(file_links) - set(old_files))
 
-            state[url] = current_hash
+            if new_files:
+                message = (
+                    f"📄 新しいファイルが追加されました！\n{url}\n\n"
+                    + "\n".join(new_files[:5]) +
+                    f"\n\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                )
+
+                line_bot_api.push_message(
+                    LINE_USER_ID,
+                    TextSendMessage(text=message)
+                )
+
+            # 状態更新
+            state[url] = {
+                "hash": current_hash,
+                "files": file_links
+            }
 
     except Exception as e:
         print(f"Error ({url}): {e}")
