@@ -1,101 +1,72 @@
 import requests
 from bs4 import BeautifulSoup
+import hashlib
 import json
 import os
 from datetime import datetime
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
 
-# LINE設定
-LINE_CHANNEL_ACCESS_TOKEN = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
-LINE_USER_ID = os.environ.get('LINE_USER_ID')
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-
-# 監視対象サイト
+# ===== 設定 =====
 SITES = [
-    "https://share.google/l56si6WvWzWhAbhlr",
-    "https://share.google/oad4TKOTOeP3pmMdY",
-    "https://www.izumi-tta.com/taikaiyotei_2026.html", 
-    "https://share.google/OmlEa7PjGO09b9hIx",
-    "https://share.google/helpbNNIdjkP1yc8g", 
-    "https://share.google/FcReuhJMFCitnELOk", 
-    "https://share.google/zkAIpAHVkfpUf46m7"
+    "https://www.izumi-tta.com/taikaiyotei_2026.html"
 ]
 
-# キーワード
-KEYWORDS = ["大会", "要項", "申込", "案内"]
+KEYWORDS = ["卓球大会", "要項", "申込", "案内"]
 
-def load_state():
-    """state.json から前回の状態を読み込み"""
-    if os.path.exists('state.json'):
-        with open('state.json', 'r') as f:
-            return json.load(f)
-    return {}
+STATE_FILE = "state.json"
 
-def save_state(state):
-    """state.json に現在の状態を保存"""
-    with open('state.json', 'w') as f:
-        json.dump(state, f, indent=2)
+LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
+LINE_USER_ID = os.getenv("LINE_USER_ID")
 
-def check_site(url):
-    """サイトをチェック"""
+line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
+
+# ===== 状態読み込み =====
+if os.path.exists(STATE_FILE):
+    with open(STATE_FILE, "r") as f:
+        state = json.load(f)
+else:
+    state = {}
+
+# ===== メイン処理 =====
+for url in SITES:
     try:
-        response = requests.get(url, timeout=10)
-        response.encoding = 'utf-8'
-        return response.text
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
+        response = requests.get(url)
+        response.raise_for_status()
 
-def extract_keywords(content):
-    """キーワードを抽出"""
-    found = []
-    for keyword in KEYWORDS:
-        if keyword in content:
-            found.append(keyword)
-    return found
+        soup = BeautifulSoup(response.text, "html.parser")
 
-def send_line_message(message):
-    """LINE通知を送信"""
-    try:
-        line_bot_api.push_message(LINE_USER_ID, TextSendMessage(text=message))
-        print(f"LINE通知送信: {message}")
-    except Exception as e:
-        print(f"LINE送信エラー: {e}")
+        text = soup.get_text()
+        lines = text.splitlines()
 
-def main():
-    state = load_state()
-    
-    for url in SITES:
-        print(f"チェック中: {url}")
-        content = check_site(url)
-        
-        if not content:
-            continue
-        
-        # キーワード抽出
-        keywords = extract_keywords(content)
-        
-        # ハッシュ値で変更検出
-        import hashlib
+        # ▼ キーワード含む行だけ抽出
+        matched_lines = []
+        for line in lines:
+            line = line.strip()
+            if any(keyword in line for keyword in KEYWORDS):
+                matched_lines.append(line)
+
+        # まとめてハッシュ化
+        content = "\n".join(matched_lines)
         current_hash = hashlib.md5(content.encode()).hexdigest()
-        
-        if url not in state:
-            state[url] = {"hash": None, "keywords": []}
-        
-        # 変更があったか確認
-        if state[url]["hash"] != current_hash:
-            message = f"🔔 {url} が更新されました！\n"
-            if keywords:
-                message += f"キーワード: {', '.join(keywords)}\n"
-            message += f"更新時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-            
-            send_line_message(message)
-            state[url]["hash"] = current_hash
-            state[url]["keywords"] = keywords
-    
-    save_state(state)
-    print("監視完了")
 
-if __name__ == "__main__":
-    main()
+        # 前回と比較
+        if url not in state:
+            state[url] = current_hash
+
+        elif state[url] != current_hash:
+            message = f"🔔 更新検知！\n{url}\n\n該当内容:\n" + "\n".join(matched_lines[:5]) + f"\n\n{datetime.now()}"
+
+            line_bot_api.push_message(
+                LINE_USER_ID,
+                TextSendMessage(text=message)
+            )
+
+            state[url] = current_hash
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+# ===== 状態保存 =====
+with open(STATE_FILE, "w") as f:
+    json.dump(state, f)
