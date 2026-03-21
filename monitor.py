@@ -1,12 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
+import hashlib
 import json
 import os
-import re
 from datetime import datetime
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
-from urllib.parse import urljoin
 
 # ===== 設定 =====
 SITES = [
@@ -20,7 +19,8 @@ SITES = [
 ]
 
 KEYWORDS = ["要項", "大会", "杯", "案内"]
-FILE_EXTENSIONS = [".pdf", ".xls", ".xlsx"]
+
+FILE_KEYWORDS = [".pdf", ".xls", ".xlsx"]
 
 STATE_FILE = "state.json"
 
@@ -29,11 +29,14 @@ LINE_USER_ID = os.getenv("LINE_USER_ID")
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 
-# ===== 状態読み込み =====
-if os.path.exists(STATE_FILE):
-    with open(STATE_FILE, "r") as f:
-        state = json.load(f)
-else:
+# ===== state読み込み（壊れても復旧） =====
+try:
+    if os.path.exists(STATE_FILE):
+        with open(STATE_FILE, "r") as f:
+            state = json.load(f)
+    else:
+        state = {}
+except:
     state = {}
 
 # ===== メイン処理 =====
@@ -44,77 +47,49 @@ for url in SITES:
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # =========================
-        # ① PDF / Excel検知
-        # =========================
-        file_links = set()
+        found_items = []
 
+        # ===== リンク検知（PDF・Excel） =====
         for a in soup.find_all("a", href=True):
             href = a["href"]
-            if any(href.lower().endswith(ext) for ext in FILE_EXTENSIONS):
-                file_links.add(urljoin(url, href))
+            text = a.get_text(strip=True)
 
-        # =========================
-        # ② キーワード検知
-        # =========================
-        text = soup.get_text()
-        lines = text.splitlines()
+            if any(ext in href.lower() for ext in FILE_KEYWORDS):
+                found_items.append(href)
 
-        keyword_lines = set()
+            elif any(keyword in text for keyword in KEYWORDS):
+                found_items.append(text)
 
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
+        # ===== ページ本文キーワード検知 =====
+        full_text = soup.get_text()
+        for keyword in KEYWORDS:
+            if keyword in full_text:
+                found_items.append(keyword)
 
-            if any(k in line for k in KEYWORDS):
-                # 日時などノイズ除去
-                cleaned = re.sub(r"\d{4}.*", "", line)
-                cleaned = re.sub(r"\d{1,2}:\d{2}(:\d{2})?", "", cleaned)
-                cleaned = cleaned.strip()
+        # ===== 重複削除 =====
+        found_items = list(set(found_items))
 
-                if cleaned:
-                    keyword_lines.add(cleaned)
+        # ===== ハッシュ化 =====
+        content = "\n".join(sorted(found_items))
+        current_hash = hashlib.md5(content.encode()).hexdigest()
 
-        # =========================
-        # 初期化
-        # =========================
+        # ===== 比較 =====
         if url not in state:
-            state[url] = {
-                "files": list(file_links),
-                "keywords": list(keyword_lines)
-            }
-            continue
+            state[url] = current_hash
 
-        old_files = set(state[url].get("files", []))
-        old_keywords = set(state[url].get("keywords", []))
-
-        # =========================
-        # 差分検知
-        # =========================
-        new_files = file_links - old_files
-        new_keywords = keyword_lines - old_keywords
-
-        # =========================
-        # 通知
-        # =========================
-        if new_files or new_keywords:
-            message = f"🔔 更新検知\n{url}\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        elif state[url] != current_hash:
+            message = f"🔔 更新検知！\n{url}\n{datetime.now()}"
 
             line_bot_api.push_message(
                 LINE_USER_ID,
                 TextSendMessage(text=message)
             )
 
-        # 状態更新
-        state[url] = {
-            "files": list(file_links),
-            "keywords": list(keyword_lines)
-        }
+            state[url] = current_hash
 
     except Exception as e:
-        print(f"Error ({url}): {e}")
+        print(f"Error at {url}: {e}")
 
-# ===== 保存 =====
+# ===== state保存 =====
 with open(STATE_FILE, "w") as f:
-    json.dump(state, f, ensure_ascii=False, indent=2)
+    json.dump(state, f, indent=2, ensure_ascii=False)
