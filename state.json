@@ -1,1 +1,33 @@
-{"https://www.jtta.or.jp/": {"hash": "b5116f5852a2499b32c52609877916ce", "keywords": ["\u5927\u4f1a", "\u7533\u8fbc"]}, "https://tabletennisworld.com/": {"hash": "db78842f1f1346565b06c23398b0fcb9", "keywords": []}, "https://share.google/l56si6WvWzWhAbhlr": {"hash": "3857716f9fdddd9f1a0c82dc67e29a84", "keywords": ["\u5927\u4f1a", "\u8981\u9805", "\u7533\u8fbc", "\u6848\u5185"]}, "https://share.google/oad4TKOTOeP3pmMdY": {"hash": "c2a8188ec25f3596b943a1fa43574428", "keywords": ["\u5927\u4f1a", "\u8981\u9805", "\u7533\u8fbc"]}, "https://www.izumi-tta.com/taikaiyotei_2026.html": "d41d8cd98f00b204e9800998ecf8427e", "https://share.google/OmlEa7PjGO09b9hIx": {"hash": "d0d38d7f700e431e5c621c2be65ea310", "keywords": []}, "https://share.google/helpbNNIdjkP1yc8g": {"hash": "0a16acf785e25226de726d5c3deb0000", "keywords": ["\u5927\u4f1a", "\u7533\u8fbc", "\u6848\u5185"]}, "https://share.google/FcReuhJMFCitnELOk": {"hash": "4593e66d82d198717321599d7f0ddf91", "keywords": ["\u5927\u4f1a", "\u6848\u5185"]}, "https://share.google/zkAIpAHVkfpUf46m7": {"hash": "0e8d5d1d8eb7fabbb8de887ee49743ca", "keywords": []}}
+{
+  "https://www.jtta.or.jp/": {
+    "hash": "b5116f5852a2499b32c52609877916ce",
+    "keywords": [
+      "大会",
+      "申込"
+    ]
+  },
+  "https://tabletennisworld.com/": {
+    "hash": "db78842f1f1346565b06c23398b0fcb9",
+    "keywords": []
+  },
+  "https://share.google/l56si6WvWzWhAbhlr": "ad774c388dec5952a9b85a0267b036cc",
+  "https://share.google/oad4TKOTOeP3pmMdY": {
+    "hash": "c2a8188ec25f3596b943a1fa43574428",
+    "keywords": [
+      "大会",
+      "要項",
+      "申込"
+    ]
+  },
+  "https://www.izumi-tta.com/taikaiyotei_2026.html": "d41d8cd98f00b204e9800998ecf8427e",
+  "https://share.google/OmlEa7PjGO09b9hIx": {
+    "hash": "d0d38d7f700e431e5c621c2be65ea310",
+    "keywords": []
+  },
+  "https://share.google/helpbNNIdjkP1yc8g": "9e37b3b7de2e070d5ebf78bae784fe68",
+  "https://share.google/FcReuhJMFCitnELOk": "64c37b5fe2fe82e7a1e9b08ab2a76c00",
+  "https://share.google/zkAIpAHVkfpUf46m7": {
+    "hash": "0e8d5d1d8eb7fabbb8de887ee49743ca",
+    "keywords": []
+  }
+}
