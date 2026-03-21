@@ -8,11 +8,15 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Python setup
         uses: actions/setup-python@v5
@@ -28,8 +32,10 @@ jobs:
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
         run: python monitor.py
 
-      - name: Show output
+      - name: Git pull and push
         run: |
-          echo "=== state.json ===" 
-          cat state.json 2>/dev/null || echo "state.json not found"
-          echo "=== workflow complete ==="
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --no-edit
+          git add state.json || true
+          git diff --cached --quiet || (git commit -m "Update state at $(date +%Y-%m-%d\ %H:%M:%S)" && git push origin main)
