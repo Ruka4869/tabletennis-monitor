@@ -13,9 +13,13 @@ line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 
 # 監視対象サイト
 SITES = [
-    "https://www.jtta.or.jp/",
-    "https://tabletennisworld.com/",
-    "https://example.com/tournaments",
+    "https://share.google/l56si6WvWzWhAbhlr",
+    "https://share.google/oad4TKOTOeP3pmMdY",
+    "https://www.izumi-tta.com/taikaiyotei_2026.html", 
+    "https://share.google/OmlEa7PjGO09b9hIx",
+    "https://share.google/helpbNNIdjkP1yc8g", 
+    "https://share.google/FcReuhJMFCitnELOk", 
+    "https://share.google/zkAIpAHVkfpUf46m7"
 ]
 
 # キーワード
