@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 line-bot-sdk
 
       - name: Run monitor script
         env:
@@ -34,5 +34,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git add state.json
           git diff --cached --quiet || (git commit -m "Update state at $(date)" && git push)
