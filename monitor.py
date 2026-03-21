@@ -1,36 +1,44 @@
-import requests
-import json
-import time
+# Tournament Monitoring Logic
 
-LINE_NOTIFY_API = 'https://notify-api.line.me/api/notify'
-LINE_NOTIFY_TOKEN = 'YOUR_LINE_TOKEN'
+This script monitors tournaments and extracts relevant information from documents.
 
+## Keyword Extraction
 
-def send_line_notification(message):
-    headers = {'Authorization': f'Bearer {LINE_NOTIFY_TOKEN}'}
-    payload = {'message': message}
-    requests.post(LINE_NOTIFY_API, headers=headers, data=payload)
+The following keywords are extracted from the tournament documents:
+- 大会
+- 要項
+- 申込
+- 案内
 
+## File Detection
 
-def monitor_tournament(tournament_id):
-    # Placeholder for monitoring tournament information
-    while True:
-        # Simulated fetching tournament data
-        tournament_data = fetch_tournament_data(tournament_id)
-        
-        # Check for updates and send notification
-        if tournament_data:
-            message = f'Tournament {tournament_id} has updates: {json.dumps(tournament_data)}'
-            send_line_notification(message)
+The script currently detects the following file types:
+- PDF
+- Excel
 
-        time.sleep(60)  # Check every minute
+## Implementation
 
+import os
+import re
 
-def fetch_tournament_data(tournament_id):
-    # Placeholder for fetching tournament data
-    # Implement the actual fetching logic here
-    return {'status': 'ongoing', 'participants': 10}
+# Function to monitor files in a given directory
 
+def monitor_directory(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.pdf') or filename.endswith('.xls') or filename.endswith('.xlsx'):
+            process_file(os.path.join(directory, filename))
 
-if __name__ == '__main__':
-    monitor_tournament('1234')  # Replace '1234' with the actual tournament ID
+# Function to process detected files
+
+def process_file(filepath):
+    with open(filepath, 'rb') as file:
+        content = file.read()
+        extract_keywords(content)
+
+# Function to extract keywords
+
+def extract_keywords(content):
+    keywords = ['大会', '要項', '申込', '案内']
+    for keyword in keywords:
+        if re.search(keyword.encode('utf-8'), content):
+            print(f'Keyword {keyword} found in document.')
