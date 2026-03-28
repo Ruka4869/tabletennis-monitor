@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import hashlib
 import json
 import os
+import re
 from datetime import datetime
+from urllib.parse import urljoin
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
 
@@ -18,7 +20,7 @@ SITES = [
     "https://sayaiwagogo.wixsite.com/my-site/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89"
 ]
 
-KEYWORDS = ["要項", "大会", "杯", "案内"]
+KEYWORDS = ["要項", "大会", "杯", "案内", "更新", "お知らせ"]
 FILE_KEYWORDS = [".pdf", ".xls", ".xlsx"]
 
 STATE_FILE = "state.json"
@@ -42,6 +44,23 @@ try:
 except:
     state = {}
 
+# ===== 意味のある文章か判定 =====
+def is_meaningful_text(text):
+    text = text.strip()
+
+    # 日付のみ
+    if re.fullmatch(r"\d{4}[/-]\d{1,2}[/-]\d{1,2}", text):
+        return False
+
+    if re.fullmatch(r"\d{4}年\d{1,2}月\d{1,2}日", text):
+        return False
+
+    # 「更新日：2026/03/28」など短い日付情報だけ
+    if re.fullmatch(r".*(更新日|最終更新).*\d{4}.*", text) and len(text) < 20:
+        return False
+
+    return True
+
 # ===== メイン処理 =====
 for url in SITES:
     try:
@@ -50,45 +69,58 @@ for url in SITES:
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        found_items = []
+        detected_items = []
 
-        # ===== リンク検知 =====
+        # ===== ① リンク検知 =====
         for a in soup.find_all("a", href=True):
-            href = a["href"]
+            href = urljoin(url, a["href"].strip())
             text = a.get_text(strip=True)
 
-            # PDF / Excel
+            # ファイル
             if any(ext in href.lower() for ext in FILE_KEYWORDS):
-                found_items.append(href)
+                detected_items.append(f"FILE::{href}")
 
-            # キーワード含むリンク
+            # キーワードリンク
             if any(keyword in text for keyword in KEYWORDS):
-                found_items.append(text)
+                if is_meaningful_text(text):
+                    detected_items.append(f"TEXT::{text}")
 
-        # ===== 本文キーワード検知 =====
-        full_text = soup.get_text()
-        for keyword in KEYWORDS:
-            if keyword in full_text:
-                found_items.append(keyword)
+        # ===== ② 本文検知 =====
+        for t in soup.stripped_strings:
+            if any(keyword in t for keyword in KEYWORDS):
 
-        # ===== 重複削除 =====
-        found_items = list(set(found_items))
+                cleaned = t.strip()
 
-        # ===== ハッシュ（ここ重要）=====
-        content = full_text + "\n".join(sorted(found_items))
+                if not is_meaningful_text(cleaned):
+                    continue
+
+                if len(cleaned) > 5:
+                    detected_items.append(f"BODY::{cleaned}")
+
+        # ===== 整理 =====
+        detected_items = sorted(list(set(detected_items)))
+
+        content = "\n".join(detected_items)
         current_hash = hashlib.md5(content.encode()).hexdigest()
 
         # ===== 初回登録 =====
         if url not in state:
-            state[url] = current_hash
+            state[url] = {
+                "hash": current_hash,
+                "items": detected_items
+            }
             continue
 
+        old_items = state[url]["items"]
+        added = list(set(detected_items) - set(old_items))
+
         # ===== 更新検知 =====
-        if state[url] != current_hash:
+        if added:
             message = (
-                f"🔔 更新検知！\n"
-                f"{url}\n"
-                f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                f"🔔 更新検知！\n{url}\n"
+                f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+                "▼追加内容\n" +
+                "\n".join(added[:5])
             )
 
             line_bot_api.push_message(
@@ -96,11 +128,15 @@ for url in SITES:
                 TextSendMessage(text=message)
             )
 
-            state[url] = current_hash
+        # ===== state更新 =====
+        state[url] = {
+            "hash": current_hash,
+            "items": detected_items
+        }
 
     except Exception as e:
         print(f"Error at {url}: {e}")
 
-# ===== state保存 =====
+# ===== 保存 =====
 with open(STATE_FILE, "w") as f:
     json.dump(state, f, indent=2, ensure_ascii=False)
