@@ -2,7 +2,7 @@ name: Monitor
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 10分ごと（安定）
+    - cron: "0 0 * * *"   
   workflow_dispatch:
 
 jobs:
