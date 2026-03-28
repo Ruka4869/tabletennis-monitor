@@ -19,7 +19,6 @@ SITES = [
 ]
 
 KEYWORDS = ["要項", "大会", "杯", "案内"]
-
 FILE_KEYWORDS = [".pdf", ".xls", ".xlsx"]
 
 STATE_FILE = "state.json"
@@ -29,7 +28,11 @@ LINE_USER_ID = os.getenv("LINE_USER_ID")
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 
-# ===== state読み込み（壊れても復旧） =====
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
+
+# ===== state読み込み =====
 try:
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
@@ -42,25 +45,27 @@ except:
 # ===== メイン処理 =====
 for url in SITES:
     try:
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, headers=HEADERS, timeout=15)
         response.raise_for_status()
 
         soup = BeautifulSoup(response.text, "html.parser")
 
         found_items = []
 
-        # ===== リンク検知（PDF・Excel） =====
+        # ===== リンク検知 =====
         for a in soup.find_all("a", href=True):
             href = a["href"]
             text = a.get_text(strip=True)
 
+            # PDF / Excel
             if any(ext in href.lower() for ext in FILE_KEYWORDS):
                 found_items.append(href)
 
-            elif any(keyword in text for keyword in KEYWORDS):
+            # キーワード含むリンク
+            if any(keyword in text for keyword in KEYWORDS):
                 found_items.append(text)
 
-        # ===== ページ本文キーワード検知 =====
+        # ===== 本文キーワード検知 =====
         full_text = soup.get_text()
         for keyword in KEYWORDS:
             if keyword in full_text:
@@ -69,16 +74,22 @@ for url in SITES:
         # ===== 重複削除 =====
         found_items = list(set(found_items))
 
-        # ===== ハッシュ化 =====
-        content = "\n".join(sorted(found_items))
+        # ===== ハッシュ（ここ重要）=====
+        content = full_text + "\n".join(sorted(found_items))
         current_hash = hashlib.md5(content.encode()).hexdigest()
 
-        # ===== 比較 =====
+        # ===== 初回登録 =====
         if url not in state:
             state[url] = current_hash
+            continue
 
-        elif state[url] != current_hash:
-            message = f"🔔 更新検知！\n{url}\n{datetime.now()}"
+        # ===== 更新検知 =====
+        if state[url] != current_hash:
+            message = (
+                f"🔔 更新検知！\n"
+                f"{url}\n"
+                f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+            )
 
             line_bot_api.push_message(
                 LINE_USER_ID,
