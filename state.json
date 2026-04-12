@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "b2844bf68662b9d099612104fa995d3e",
+    "hash": "2812508b6a3f88a47d270a1e718eb7b6",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -28,15 +28,19 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/02zenlamosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/02zenlasyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/02zenlayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/03syogakumosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/03syogakusyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/03syogakuyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/04jituyosemosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/04jituyosesyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/04jituyoseyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/05kurayosemosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/05kurayosesyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/05kurayoseyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/06hokabamosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/06hokabasyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/06hokabayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/01kaisi.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/02kaitei.pdf",
