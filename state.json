@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "2812508b6a3f88a47d270a1e718eb7b6",
+    "hash": "64580ca20c60147bb2428f7200e3d85d",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -25,6 +25,7 @@
       "FILE::http://www.miyagi-tta.com/2025/open/open.pdf",
       "FILE::http://www.miyagi-tta.com/2026/jimu/01keikaku.pdf",
       "FILE::http://www.miyagi-tta.com/2026/jimu/02haken.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/sinpan/01zenkenyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/02zenlamosikomi.xlsx",
@@ -218,6 +219,34 @@
       "FILE::https://daf2fa27-3c11-4438-894f-015eb8f65b00.filesusr.com/ugd/b9b592_ef5892d407b34fbeae144dc886dd4920.pdf",
       "TEXT::R8年度年スポーツ祭案内.pdf",
       "TEXT::大会結果"
+    ]
+  },
+  "https://miyagino-tta.jimdofree.com/": {
+    "hash": "4d3c6cc675da43df4ff980cbb388b851",
+    "items": [
+      "BODY::2025-05-09： 役員情報を更新しました。",
+      "BODY::の要項を掲載しました",
+      "BODY::の要項を掲載しました。",
+      "BODY::仙台市宮城野区における卓球の健全な発展と併せて、会員相互の連帯を図る事を目的とし、市卓球協会事業への協力、各種大会の開催および後援、技術指導など若い世代の育成などを実施しております。",
+      "BODY::大会予定・結果(R05)",
+      "BODY::大会予定・結果(R06)",
+      "BODY::大会予定・結果(R07)",
+      "BODY::宮城野区オープンダブルス卓球大会",
+      "BODY::宮城野区オープン個人卓球大会",
+      "BODY::宮城野区オープン団体卓球大会",
+      "BODY::宮城野区会長杯卓球大会",
+      "BODY::宮城野区卓球協会では、オープン卓球大会、技術講習会などの、各種卓球関連事業を行っております。",
+      "BODY::宮城野区卓球協会会長杯",
+      "BODY::更新：2025-04-01",
+      "BODY::本Webサイトでは、主催大会の要項掲載など、事業運営についてお伝えして参ります。",
+      "TEXT::大会予定・結果(R05)",
+      "TEXT::大会予定・結果(R06)",
+      "TEXT::大会予定・結果(R07)",
+      "TEXT::宮城野区オープンダブルス卓球大会",
+      "TEXT::宮城野区オープン個人卓球大会",
+      "TEXT::宮城野区オープン団体卓球大会",
+      "TEXT::宮城野区会長杯卓球大会",
+      "TEXT::宮城野区卓球協会会長杯"
     ]
   }
 }
