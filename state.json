@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "c22a9a5d377093d4bf81db986aa43a96",
+    "hash": "264e30361c5fe82afcb4494f31bf21e0",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -29,6 +29,8 @@
       "FILE::http://www.miyagi-tta.com/2026/sonota/01coach1mosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/sonota/01coach1nittei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sonota/01coach1yoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/sonota/02hokabakoryumosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/sonota/02hokabakoryuyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/02zenlamosikomi.xlsx",
@@ -52,6 +54,8 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlamosikomi.xls",
       "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlaranking.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlayoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/09hodanmosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/09hodanyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/01kaisi.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/02kaitei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/03toroku.pdf",
