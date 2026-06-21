@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "9328f67dd0a218f7de1afa62fd94347b",
+    "hash": "fdbcb80c6a49adf88e22ee0d0d23f183",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -53,6 +53,7 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/07tolayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlamosikomi.xls",
       "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlaranking.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlasyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/08zenlayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/09hodanmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/09hodansyukei.pdf",
