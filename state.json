@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "fdbcb80c6a49adf88e22ee0d0d23f183",
+    "hash": "42f61e25766a21c4f6cf049525d2b47a",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -59,12 +59,12 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/09hodansyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/09hodanyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/10kokufuru.xls",
-      "FILE::http://www.miyagi-tta.com/2026/taikai/10kokusei0619.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/10kokuseimosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/10kokuseisyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/10kokuseiyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/10kokusikaku.pdf",
-      "FILE::http://www.miyagi-tta.com/2026/taikai/10kokusyo0619.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/10kokusyomosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/10kokusyosyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/10kokusyoyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/11zenmasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/11zenmasrank.pdf",
