@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "42f61e25766a21c4f6cf049525d2b47a",
+    "hash": "1b2e8135aa567ff4a13d49e6e4c45df9",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -71,6 +71,7 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/11zenmasyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14mosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14yoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/12kadesyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kadewmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kadewyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/01kaisi.pdf",
@@ -110,7 +111,7 @@
     ]
   },
   "https://tsuneminagasawa.wixsite.com/my-site": {
-    "hash": "f3e8aaafcaafebc4df498fcbe9ddbc97",
+    "hash": "eb3f41c0703527c2784e6a34264c60bc",
     "items": [
       "BODY::◇第20回太白区・若林区親善卓球大会（令和8年3月22日）終了しました",
       "BODY::◇第21回若林オープン卓球大会優勝者の皆さん​",
@@ -120,7 +121,7 @@
       "BODY::◇第49回若卓杯卓球大会＜令和8年6月20日",
       "BODY::〇大会の開催",
       "BODY::〇終了した大会",
-      "BODY::【6月18日更新】",
+      "BODY::【6月27日更新】",
       "BODY::スポレクフェスタ2025卓球大会",
       "BODY::スポレクフェスタ2026卓球大会",
       "BODY::第15回若卓ジュニア卓球大会",
@@ -135,14 +136,12 @@
       "BODY::第48回若卓杯卓球大会",
       "BODY::第49回若卓杯卓球大会",
       "BODY::第50回若卓杯卓球大会",
-      "BODY::詳細については「ご案内」をご覧ください",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_0074f4334b4644f0918dcdd7e4b6b132.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_0291760339c64e00820aa1c8c3ba2c61.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_03482145da6445f8beda8b27d90600d0.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_044357fa642c4dbb91f2a257b0186c30.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_178582eeaac342de8588a267afda8277.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_17c394cea2c64b809f16eb66b40f415d.pdf",
-      "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_274c6337ae784e49859a4ca9d3a6b247.xlsx?dn=%E5%8F%82%E5%8A%A0%E7%94%B3%E8%BE%BC%E6%9B%B8_%E7%AC%AC49%E5%9B%9E%E8%8B%A5%E5%8D%93%E6%9D%AF%E5%8D%93%E7%90%83%E5%A4%A7%E4%BC%9A.xlsx",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_27afc0f86f144125b869d1fcca2b4d18.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_37591f22adb14d2faca79586418cf40f.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_38bc7bc43701480d9900bde58564bc0a.pdf",
@@ -176,7 +175,6 @@
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_b7d6d977344e4de2aa20bb5c8a5c3fc1.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_b87f1671170c4854bc7c342c22806ced.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_b9dc446fbb814c358f736714669743b9.pdf",
-      "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_bc9fcd4a234d43939d0e139cc5db42d1.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_c28d7c50c2c0420dad167845f3cf29fc.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_c5b7430f8ac04dad91ca613a7de526f7.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_c64d690b9dad4002b02690b8c8c340f1.pdf",
@@ -191,7 +189,6 @@
       "TEXT::​お知らせ",
       "TEXT::​協会案内",
       "TEXT::​大会日程",
-      "TEXT::ご案内",
       "TEXT::大会結果"
     ]
   },
