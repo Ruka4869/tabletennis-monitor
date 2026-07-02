@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "1b2e8135aa567ff4a13d49e6e4c45df9",
+    "hash": "d4b0329d7ca7e060ec02f7211dafe154",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -26,6 +26,7 @@
       "FILE::http://www.miyagi-tta.com/2026/jimu/01keikaku.pdf",
       "FILE::http://www.miyagi-tta.com/2026/jimu/02haken.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/01zenkenyoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/sinpan/101bosyuzenho.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sonota/01coach1mosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/sonota/01coach1nittei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sonota/01coach1yoko.pdf",
@@ -111,12 +112,12 @@
     ]
   },
   "https://tsuneminagasawa.wixsite.com/my-site": {
-    "hash": "eb3f41c0703527c2784e6a34264c60bc",
+    "hash": "6305b1abe1a2de5368cb8e98efd62c57",
     "items": [
       "BODY::◇第20回太白区・若林区親善卓球大会（令和8年3月22日）終了しました",
       "BODY::◇第21回若林オープン卓球大会優勝者の皆さん​",
       "BODY::◇第21回若林オープン卓球大会（令和8年5月9日）終了しました",
-      "BODY::◇第27回若卓ラージボール\u0000卓球大会優勝者の皆さん",
+      "BODY::◇第27回若卓ラージボール卓球大会優勝者の皆さん",
       "BODY::◇第27回若林ラージボール卓球大会＜令和8年6月13日",
       "BODY::◇第49回若卓杯卓球大会＜令和8年6月20日",
       "BODY::〇大会の開催",
