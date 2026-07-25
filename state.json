@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "61cbdb8766cb995e8131e1141df24b1f",
+    "hash": "703fb73976912493416e2335f07c524b",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -27,6 +27,8 @@
       "FILE::http://www.miyagi-tta.com/2026/jimu/02haken.pdf",
       "FILE::http://www.miyagi-tta.com/2026/open/24narakawa.xls",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/01zenkenyoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/sinpan/02iukokuti.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/sinpan/02iuyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/101bosyuzenho.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/01nenrinyoko.pdf",
