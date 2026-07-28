@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "703fb73976912493416e2335f07c524b",
+    "hash": "000763a71a80103cb404b6eba2f0a7c8",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -68,7 +68,10 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/11zenmasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/11zenmasrank.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/11zenmasyoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14boy.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14girl.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14mosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14pro.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kade14yoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kadesyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/12kadewmosikomi.xlsx",
