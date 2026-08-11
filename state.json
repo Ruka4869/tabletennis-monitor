@@ -6,7 +6,7 @@
     ]
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "c168063ebf3acc726583d18b0640dba9",
+    "hash": "117420a4a69997dc5d1415718adf9fe9",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -84,6 +84,7 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/13kenlayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/14zensyamosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/14zensyarenraku.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/14zensyasyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/14zensyayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/01kaisi.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/02kaitei.pdf",
