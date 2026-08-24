@@ -1,9 +1,7 @@
 {
   "https://www.sendai-tta.info/index.html": {
-    "hash": "b084bb21329d0d0f28f6ce947f017a42",
-    "items": [
-      "FILE::https://www.sendai-tta.info/contents/how-to-entry.pdf"
-    ]
+    "hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "items": []
   },
   "http://www.miyagi-tta.com/": {
     "hash": "ad862c95c8158766f0d36fece8136044",
