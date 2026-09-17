@@ -141,17 +141,19 @@
     ]
   },
   "https://tsuneminagasawa.wixsite.com/my-site": {
-    "hash": "4a818a0bd206ac540ea57db4e2f4ceda",
+    "hash": "c0808f0c812cef92512b809ba92eff2c",
     "items": [
+      "BODY::​◇スポレクフェスタ2026卓球大会",
       "BODY::◇第27回若卓ラージボール\u0000卓球大会優勝者の皆さん",
       "BODY::◇第27回若林ラージボール卓球大会",
       "BODY::◇第49回若卓杯卓球大会",
       "BODY::◇第49回若卓杯卓球大会優勝者の皆さん​",
       "BODY::〇大会の開催",
       "BODY::〇終了した大会",
-      "BODY::【8月30日更新】",
+      "BODY::【9月16日更新】",
       "BODY::スポレクフェスタ2025卓球大会",
       "BODY::スポレクフェスタ2026卓球大会",
+      "BODY::内容の詳細と申込方法は本ホームページの「大会日程」をご覧ください",
       "BODY::第15回若卓ジュニア卓球大会",
       "BODY::第17回若卓ジュニア卓球大会",
       "BODY::第20回若林区・太白区親善卓球大会",
@@ -208,12 +210,15 @@
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_dfd323734c6949ef9cf4a6672763a659.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_e154cef73da14c48863af43d34bbb201.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_e4f0708ad42b4161b7071b232bd739f1.pdf",
+      "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_effadebe4fae4f3d8485a13fa7c444ff.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_f43533ecd40645a4a7fbfce1fe652944.pdf",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_f5253bc817284a7bb2a8efc3500fc620.pdf",
+      "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_f5ca38acd859405db05fb77a47316d21.xls?dn=%E3%82%B9%E3%83%9D%E3%83%AC%E3%82%AF2026%E7%94%B3%E8%BE%BC%E6%9B%B8.xls",
       "FILE::https://92f9072d-332c-4c74-9dc0-2d1da5e1b249.filesusr.com/ugd/89ef9f_f8ac56d5358545e4a904c67880b12d43.pdf",
       "TEXT::​お知らせ",
       "TEXT::​協会案内",
       "TEXT::​大会日程",
+      "TEXT::ご案内",
       "TEXT::大会結果"
     ]
   },
