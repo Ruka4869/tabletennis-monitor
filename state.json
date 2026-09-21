@@ -4,7 +4,7 @@
     "items": []
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "05509b1224ea11167e8946f463763808",
+    "hash": "61d6e131b0fb04cbcfff9505d9727e97",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -80,6 +80,7 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/15kensenmosikomid.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/15kensenmosikomis.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/15kensensikaku.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/15kensensyukei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/15kensenyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/01kaisi.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/02kaitei.pdf",
