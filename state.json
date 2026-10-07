@@ -4,7 +4,7 @@
     "items": []
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "2c60f6b9b74cf3819384267de4d4a882",
+    "hash": "7b2825a6920065df62129fd1a26d33f6",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -93,6 +93,8 @@
       "FILE::http://www.miyagi-tta.com/2026/taikai/18hasiayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/taikai/19kaityomosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/taikai/19kaityoyoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/20tokyomosikomi.xlsx",
+      "FILE::http://www.miyagi-tta.com/2026/taikai/20tokyoyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/01kaisi.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/02kaitei.pdf",
       "FILE::http://www.miyagi-tta.com/2026/toroku/03toroku.pdf",
