@@ -4,7 +4,7 @@
     "items": []
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "f1f08d1a3e728d775bd77a29d48516e0",
+    "hash": "7b626ec1c17a0f6bf0ddf6c298a3d05f",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
@@ -29,6 +29,7 @@
       "FILE::http://www.miyagi-tta.com/2026/sinpan/02iuyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/03koninmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/03koninyoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/sinpan/04zensinyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/05tokenmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/05tokenyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/06tojukenyoko.pdf",
