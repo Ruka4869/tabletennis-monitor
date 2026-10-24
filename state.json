@@ -4,13 +4,12 @@
     "items": []
   },
   "http://www.miyagi-tta.com/": {
-    "hash": "c62be649967577de111e29c70f9f3b71",
+    "hash": "95dec34f47be29ee7ca6f7c9aab0c3fa",
     "items": [
       "FILE::http://www.miyagi-tta.com/2025/open/16omasmosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasosirase.pdf",
       "FILE::http://www.miyagi-tta.com/2025/open/16omasyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2025/open/17itomima.xlsx",
-      "FILE::http://www.miyagi-tta.com/2025/open/19sayakayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2025/open/22hyakuyoko.xls",
       "FILE::http://www.miyagi-tta.com/2025/open/23hyakusyoyoko.xlsx",
       "FILE::http://www.miyagi-tta.com/2025/open/open.pdf",
@@ -23,6 +22,7 @@
       "FILE::http://www.miyagi-tta.com/2026/open/26aoopyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/open/27iwasyomosikomi.xlsx",
       "FILE::http://www.miyagi-tta.com/2026/open/27iwasyoyoko.pdf",
+      "FILE::http://www.miyagi-tta.com/2026/open/28sayakayoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/open/openmosikomi.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/01zenkenyoko.pdf",
       "FILE::http://www.miyagi-tta.com/2026/sinpan/02iukokuti.pdf",
