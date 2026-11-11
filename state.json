@@ -254,14 +254,15 @@
     ]
   },
   "https://sayaiwagogo.wixsite.com/my-site/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89": {
-    "hash": "88bff9fcd33d62f1227314ea614f7cab",
+    "hash": "ae584a2f337ef72ff02505edb4c0b6dd",
     "items": [
-      "BODY::第25回 青葉区中学生卓球大会",
+      "BODY::第25回　青葉区中学生卓球大会",
       "BODY::青葉区卓球大会の案内",
       "FILE::https://daf2fa27-3c11-4438-894f-015eb8f65b00.filesusr.com/ugd/b9b592_7823ddba86af41038e332be2e918179c.xlsx?dn=%E7%94%B3%E8%BE%BC%E7%94%A8%E7%B4%99.xlsx",
+      "FILE::https://daf2fa27-3c11-4438-894f-015eb8f65b00.filesusr.com/ugd/b9b592_859f4110d2a742549aafb8b43ece161a.xlsx?dn=%E7%94%B3%E8%BE%BC%E7%94%A8%E7%B4%99.xlsx",
       "FILE::https://daf2fa27-3c11-4438-894f-015eb8f65b00.filesusr.com/ugd/b9b592_9d9535380ae14776aab6a12446d9680f.pdf",
-      "TEXT::大会案内",
-      "TEXT::大会結果"
+      "TEXT::大会結果",
+      "TEXT::大会要項"
     ]
   },
   "https://miyagino-tta.jimdofree.com/": {
